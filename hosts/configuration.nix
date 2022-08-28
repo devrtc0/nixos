@@ -42,6 +42,7 @@
       exfatprogs
       firefox
       chromium
+      yandex-browser
       (vscode-with-extensions.override {
         vscode = vscodium;
         vscodeExtensions = with vscode-extensions; [
