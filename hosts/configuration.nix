@@ -1,5 +1,5 @@
 { pkgs, user, ... }:
-let yandex-browser-beta = pkgs.yandex-browser.overrideAttrs (old: { version = "22.7.1.828-1"; meta.knownVulnerabilities = null; });
+let yandex-browser-beta = pkgs.yandex-browser.overrideAttrs (old: { version = "22.7.1.828-1"; meta.knownVulnerabilities = []; });
 in
 {
   nixpkgs.config.allowUnfree = true;
