@@ -1,5 +1,12 @@
 { pkgs, user, ... }:
-let yandex-browser-beta = pkgs.yandex-browser.overrideAttrs (old: { version = "22.7.1.828-1"; meta.knownVulnerabilities = []; });
+let yandex-browser-beta = pkgs.yandex-browser.overrideAttrs (old: {
+  version = "22.7.3.811-1";
+  meta.knownVulnerabilities = [ ];
+  src = {
+    url = "https://repo.yandex.ru/yandex-browser/deb/pool/main/y/yandex-browser-stable/yandex-browser-stable_22.7.3.811-1_amd64.deb";
+    sha256 = "8c24f2ad31720b8d977c4964102fb61980bc73972e1cd7b994cbcaca3e7d5e71";
+  };
+});
 in
 {
   nixpkgs.config.allowUnfree = true;
