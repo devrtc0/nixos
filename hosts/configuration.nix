@@ -23,7 +23,22 @@
       exa
       git-crypt
       vscodium
+      ldns
       rnix-lsp
+      p7zip
+      unrar
+      zip
+      unzip
+      pbzip2
+      pigz
+      noto-fonts
+      noto-fonts-extra
+      noto-fonts-emoji
+      noto-fonts-cjk-sans
+      noto-fonts-cjk-serif
+      hack-font
+      exfat
+      exfatprogs
       (vscode-with-extensions.override {
         vscode = vscodium;
         vscodeExtensions = with vscode-extensions; [
