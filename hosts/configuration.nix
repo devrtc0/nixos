@@ -11,6 +11,25 @@
       micro
       mc
       htop
+      oath-toolkit
+      keepassxc
+      flameshot
+      tdesktop
+      lazygit
+      yt-dlp
+      mkvtoolnix
+      jq
+      fd
+      exa
+      git-crypt
+      vscodium
+      rnix-lsp
+      (vscode-with-extensions.override {
+        vscode = vscodium;
+        vscodeExtensions = with vscode-extensions; [
+          jnoortheen.nix-ide
+        ];
+      })
     ];
   };
   users = {
