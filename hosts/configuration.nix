@@ -1,7 +1,6 @@
 { pkgs, user, ... }: {
   nixpkgs.config.allowUnfree = true;
   nixpkgs.config.permittedInsecurePackages = [
-    "yandex-browser-22.1.3.907-1"
   ];
   time = {
     timeZone = "Europe/Samara";
@@ -43,7 +42,6 @@
       exfatprogs
       firefox
       chromium
-      yandex-browser
       (vscode-with-extensions.override {
         vscode = vscodium;
         vscodeExtensions = with vscode-extensions; [
