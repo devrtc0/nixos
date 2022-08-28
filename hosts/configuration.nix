@@ -1,5 +1,8 @@
 { pkgs, user, ... }: {
   nixpkgs.config.allowUnfree = true;
+  nixpkgs.config.permittedInsecurePackages = [
+    "yandex-browser-22.1.3.907-1"
+  ];
   time = {
     timeZone = "Europe/Samara";
   };
