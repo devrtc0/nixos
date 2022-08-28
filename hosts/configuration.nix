@@ -26,4 +26,10 @@
       };
     };
   };
+  services = {
+    fstrim = {
+      enable = true;
+    };
+  };
+  boot.blacklistedKernelModules = [ "uvcvideo" ];
 }
