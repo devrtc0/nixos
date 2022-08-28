@@ -1,4 +1,5 @@
-{ lib, pkgs, ... }: {
+{ pkgs, user, ... }: {
+  nixpkgs.config.allowUnfree = true;
   time = {
     timeZone = "Europe/Samara";
   };
@@ -8,7 +9,13 @@
   environment = {
     systemPackages = with pkgs; [
       git
-      slack
+      micro
+      mc
+      htop
     ];
+  };
+  users.users.${user} = {
+    isNormalUser = true;
+    extraGroups = [ "wheel" "video" "audio" "camera" "networkmanager" "lp" "scanner" "kvm" "libvirtd" ];
   };
 }

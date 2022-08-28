@@ -11,7 +11,7 @@
     {
       nixosConfigurations = (
         import ./hosts {
-          inherit nixpkgs;
+          inherit nixpkgs user;
         }
       );
     };

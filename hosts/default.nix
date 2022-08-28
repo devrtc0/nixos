@@ -1,16 +1,12 @@
-{ nixpkgs, ... }:
+{ nixpkgs, user, ... }:
 let
   lib = nixpkgs.lib;
   system = "x86_64-linux";
-  pkgs = import nixpkgs {
-    inherit system;
-    config.allowUnfree = true;
-  };
 in
 {
   vm = lib.nixosSystem {
     inherit system;
-    specialArgs = { inherit pkgs; };
+    specialArgs = { inherit user; };
     modules = [
       ./configuration.nix
       ./vm
