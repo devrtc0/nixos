@@ -18,4 +18,11 @@
     isNormalUser = true;
     extraGroups = [ "wheel" "video" "audio" "camera" "networkmanager" "lp" "scanner" "kvm" "libvirtd" ];
   };
+  systemd = {
+    services = {
+      NetworkManager-wait-online = {
+        enable = false;
+      };
+    };
+  };
 }

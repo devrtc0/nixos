@@ -26,6 +26,7 @@
     hostName = "vm";
     dhcpcd = {
       wait = "background";
+      extraConfig = "noarp";
     };
   };
 
