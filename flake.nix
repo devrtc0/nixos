@@ -2,7 +2,7 @@
   description = "System configuration";
 
   inputs = {
-    nixpkgs.url = "github:devrtc0/nixpkgs/nixos-22.05";
+    nixpkgs.url = "nixpkgs/nixos-22.05";
   };
 
   outputs = { self, nixpkgs, ... }:

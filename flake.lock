@@ -4,16 +4,15 @@
       "locked": {
         "lastModified": 1661617163,
         "narHash": "sha256-NN9Ky47j8ohgPhA9JZyfkYIbbAo6RJkGz+7h8/exVpE=",
-        "owner": "devrtc0",
+        "owner": "NixOS",
         "repo": "nixpkgs",
         "rev": "0ba2543f8c855d7be8e90ef6c8dc89c1617e8a08",
         "type": "github"
       },
       "original": {
-        "owner": "devrtc0",
+        "id": "nixpkgs",
         "ref": "nixos-22.05",
-        "repo": "nixpkgs",
-        "type": "github"
+        "type": "indirect"
       }
     },
     "root": {

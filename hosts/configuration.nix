@@ -1,4 +1,7 @@
-{ pkgs, user, ... }: {
+{ pkgs, user, ... }:
+let yandex-browser-beta = pkgs.yandex-browser.overrideAttrs (old: { version = "22.7.1.828-1"; meta.knownVulnerabilities = null; });
+in
+{
   nixpkgs.config.allowUnfree = true;
   nixpkgs.config.permittedInsecurePackages = [
   ];
@@ -42,7 +45,7 @@
       exfatprogs
       firefox
       chromium
-      yandex-browser
+      yandex-browser-beta
       (vscode-with-extensions.override {
         vscode = vscodium;
         vscodeExtensions = with vscode-extensions; [
