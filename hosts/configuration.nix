@@ -18,6 +18,7 @@
     isNormalUser = true;
     extraGroups = [ "wheel" "video" "audio" "camera" "networkmanager" "lp" "scanner" "kvm" "libvirtd" ];
   };
+  users.extraGroups.vboxusers.members = [ "${user}" ];
   systemd = {
     services = {
       NetworkManager-wait-online = {
