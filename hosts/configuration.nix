@@ -22,7 +22,6 @@
       fd
       exa
       git-crypt
-      vscodium
       ldns
       rnix-lsp
       p7zip
@@ -39,6 +38,9 @@
       hack-font
       exfat
       exfatprogs
+      firefox
+      chromium
+      yandex-browser
       (vscode-with-extensions.override {
         vscode = vscodium;
         vscodeExtensions = with vscode-extensions; [
