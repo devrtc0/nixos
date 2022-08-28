@@ -24,6 +24,9 @@
   networking = {
     useDHCP = lib.mkDefault true;
     hostName = "vm";
+    dhcpcd = {
+      wait = "background";
+    };
   };
 
   hardware.cpu.intel.updateMicrocode = lib.mkDefault config.hardware.enableRedistributableFirmware;
