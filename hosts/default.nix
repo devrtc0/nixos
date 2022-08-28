@@ -10,6 +10,7 @@ in
 {
   vm = lib.nixosSystem {
     inherit system;
+    specialArgs = { inherit pkgs; };
     modules = [
       ./configuration.nix
       ./vm
