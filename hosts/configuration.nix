@@ -8,17 +8,18 @@
   };
   environment = {
     systemPackages = with pkgs; [
-      git
       micro
       mc
       htop
     ];
   };
-  users.users.${user} = {
-    isNormalUser = true;
-    extraGroups = [ "wheel" "video" "audio" "camera" "networkmanager" "lp" "scanner" "kvm" "libvirtd" ];
+  users = {
+    defaultUserShell = pkgs.fish;
+    users.${user} = {
+      isNormalUser = true;
+      extraGroups = [ "wheel" "video" "audio" "camera" "networkmanager" "disk" ];
+    };
   };
-  users.defaultUserShell = pkgs.fish;
   systemd = {
     services = {
       NetworkManager-wait-online = {
@@ -31,5 +32,22 @@
       enable = true;
     };
   };
-  boot.blacklistedKernelModules = [ "uvcvideo" ];
+  programs = {
+    git = {
+      enable = true;
+      config = {
+        init = {
+          defaultBranch = "master";
+        };
+      };
+    };
+    gnupg = {
+      agent = {
+        enable = true;
+      };
+    };
+    ssh = {
+      startAgent = true;
+    };
+  };
 }

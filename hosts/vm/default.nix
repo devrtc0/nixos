@@ -16,6 +16,7 @@
   services = {
     xserver = {
       enable = true;
+      layout = "us,ru";
       displayManager = {
         gdm = {
           enable = true;
@@ -28,14 +29,16 @@
       };
     };
   };
-  environment.gnome.excludePackages = (with pkgs; [
-    gnome-tour
-  ]) ++ (with pkgs.gnome; [
-    cheese # webcam tool
-    epiphany # web browser
-    gnome-characters
-    tali # poker game
-    hitori # sudoku game
-    atomix # puzzle game
-  ]);
+  environment = {
+    gnome.excludePackages = (with pkgs; [
+      gnome-tour
+    ]) ++ (with pkgs.gnome; [
+      cheese # webcam tool
+      epiphany # web browser
+      gnome-characters
+      tali # poker game
+      hitori # sudoku game
+      atomix # puzzle game
+    ]);
+  };
 }
