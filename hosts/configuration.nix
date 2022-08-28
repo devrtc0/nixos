@@ -4,11 +4,11 @@
   nixpkgs.overlays = [
     (self: super: {
       yandex-browser = super.yandex-browser.overrideAttrs (old: {
-        version = "22.7.3.811-1";
+        version = "22.7.1.828-1";
         meta.knownVulnerabilities = [ ];
         src = super.fetchurl {
-          url = "https://repo.yandex.ru/yandex-browser/deb/pool/main/y/yandex-browser-stable/yandex-browser-stable_22.7.3.811-1_amd64.deb";
-          sha256 = "8c24f2ad31720b8d977c4964102fb61980bc73972e1cd7b994cbcaca3e7d5e71";
+          url = "https://repo.yandex.ru/yandex-browser/deb/pool/main/y/yandex-browser-beta/yandex-browser-beta_22.7.1.828-1_amd64.deb";
+          sha256 = "11510b5f46a170b5da831c14870ab1e183afe65635cc7835258519ec0164c7d7";
         };
       });
     })
