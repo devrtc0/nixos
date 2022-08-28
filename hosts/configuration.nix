@@ -18,7 +18,7 @@
     isNormalUser = true;
     extraGroups = [ "wheel" "video" "audio" "camera" "networkmanager" "lp" "scanner" "kvm" "libvirtd" ];
   };
-  users.extraGroups.vboxusers.members = [ "${user}" ];
+  users.defaultUserShell = pkgs.fish;
   systemd = {
     services = {
       NetworkManager-wait-online = {
