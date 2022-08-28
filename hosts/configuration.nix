@@ -1,14 +1,18 @@
-{ pkgs, user, lib, ... }:
-let yandex-browser-beta = pkgs.yandex-browser.overrideAttrs (old: {
-  version = "22.7.3.811-1";
-  meta.knownVulnerabilities = [ ];
-  src = lib.fetchurl {
-    url = "https://repo.yandex.ru/yandex-browser/deb/pool/main/y/yandex-browser-stable/yandex-browser-stable_22.7.3.811-1_amd64.deb";
-    sha256 = "8c24f2ad31720b8d977c4964102fb61980bc73972e1cd7b994cbcaca3e7d5e71";
-  };
-});
-in
+{ pkgs, user, ... }:
+
 {
+  nixpkgs.overlays = [
+    (self: super: {
+      yandex-browser = super.yandex-browser.overrideAttrs (old: {
+        version = "22.7.3.811-1";
+        meta.knownVulnerabilities = [ ];
+        src = super.fetchurl {
+          url = "https://repo.yandex.ru/yandex-browser/deb/pool/main/y/yandex-browser-stable/yandex-browser-stable_22.7.3.811-1_amd64.deb";
+          sha256 = "8c24f2ad31720b8d977c4964102fb61980bc73972e1cd7b994cbcaca3e7d5e71";
+        };
+      });
+    })
+  ];
   nixpkgs.config.allowUnfree = true;
   nixpkgs.config.permittedInsecurePackages = [
   ];
@@ -52,7 +56,7 @@ in
       exfatprogs
       firefox
       chromium
-      yandex-browser-beta
+      yandex-browser
       (vscode-with-extensions.override {
         vscode = vscodium;
         vscodeExtensions = with vscode-extensions; [
