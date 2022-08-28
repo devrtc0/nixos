@@ -6,7 +6,7 @@
     timeZone = "Europe/Samara";
   };
   system = {
-    stateVersion = "22.11";
+    stateVersion = "22.05";
   };
   environment = {
     systemPackages = with pkgs; [
