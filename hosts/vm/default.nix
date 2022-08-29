@@ -1,4 +1,6 @@
-{ pkgs, ... }: {
+{ pkgs, ... }:
+
+{
   imports = [
     ./hardware.nix
   ];
@@ -30,15 +32,8 @@
     };
   };
   environment = {
-    gnome.excludePackages = (with pkgs; [
+    gnome.excludePackages = with pkgs; [
       gnome-tour
-    ]) ++ (with pkgs.gnome; [
-      cheese # webcam tool
-      epiphany # web browser
-      gnome-characters
-      tali # poker game
-      hitori # sudoku game
-      atomix # puzzle game
-    ]);
+    ];
   };
 }
