@@ -9,10 +9,9 @@
     let user = "azat";
     in
     {
-      nixosConfigurations = (
+      nixosConfigurations =
         import ./hosts {
           inherit nixpkgs user;
-        }
-      );
+        };
     };
 }

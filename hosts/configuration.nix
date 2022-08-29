@@ -16,8 +16,7 @@
     })
   ];
   nixpkgs.config.allowUnfree = true;
-  nixpkgs.config.permittedInsecurePackages = [
-  ];
+  nixpkgs.config.permittedInsecurePackages = [ ];
   time = {
     timeZone = "Europe/Samara";
   };
@@ -63,27 +62,21 @@
   };
   fonts.fonts = with pkgs; [
     noto-fonts
-    noto-fonts-extra
-    noto-fonts-emoji
-    noto-fonts-cjk-sans
-    noto-fonts-cjk-serif
+    # noto-fonts-extra
+    # noto-fonts-emoji
+    # noto-fonts-cjk-sans
+    # noto-fonts-cjk-serif
     hack-font
     source-code-pro
-    jetbrains-mono
-    font-awesome
-    fira-code
-    (nerdfonts.override {
-      fonts = [
-        "FiraCode"
-      ];
-    })
   ];
   users = {
     defaultUserShell = pkgs.fish;
-    users.${user} = {
-      isNormalUser = true;
-      hashedPassword = "$6$r3DQjq.D2fz8rc5I$BtHOQnP/.lIcUJbcPyuRZH6ChQbfh.WEYgiX8ZqkF5RAuU/a5ebEZtuZ9tmbHdH9YOW/Gm6/fHFaQEvQRlk2R0";
-      extraGroups = [ "wheel" "video" "audio" "camera" "networkmanager" "disk" ];
+    users = {
+      ${user} = {
+        isNormalUser = true;
+        hashedPassword = "$6$r3DQjq.D2fz8rc5I$BtHOQnP/.lIcUJbcPyuRZH6ChQbfh.WEYgiX8ZqkF5RAuU/a5ebEZtuZ9tmbHdH9YOW/Gm6/fHFaQEvQRlk2R0";
+        extraGroups = [ "wheel" "video" "audio" "camera" "networkmanager" "disk" ];
+      };
     };
   };
   systemd = {
