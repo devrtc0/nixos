@@ -3,13 +3,10 @@
 {
   nixpkgs.overlays = [
     (self: super: {
-      yandex-browser-beta = super.yandex-browser.overrideAttrs (old: {
+      yandex-browser = super.yandex-browser.overrideAttrs (old: rec {
         version = "22.7.1.828-1";
         meta.knownVulnerabilities = [ ];
-        src = super.fetchurl {
-          url = "https://repo.yandex.ru/yandex-browser/deb/pool/main/y/yandex-browser-beta/yandex-browser-beta_22.7.1.828-1_amd64.deb";
-          sha256 = "11510b5f46a170b5da831c14870ab1e183afe65635cc7835258519ec0164c7d7";
-        };
+        src.sha256 = "11510b5f46a170b5da831c14870ab1e183afe65635cc7835258519ec0164c7d7";
       });
     })
   ];
@@ -56,7 +53,7 @@
       exfatprogs
       firefox
       chromium
-      yandex-browser-beta
+      yandex-browser
       (vscode-with-extensions.override {
         vscode = vscodium;
         vscodeExtensions = with vscode-extensions; [
