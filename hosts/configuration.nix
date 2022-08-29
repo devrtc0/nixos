@@ -1,6 +1,7 @@
 { pkgs, user, ... }:
 
 {
+  boot.kernelParams = [ "mitigations=off" ];
   nixpkgs.overlays = [
     (self: super: {
       yandex-browser = super.yandex-browser.overrideAttrs (old: rec {
@@ -47,12 +48,6 @@
       unzip
       pbzip2
       pigz
-      noto-fonts
-      noto-fonts-extra
-      noto-fonts-emoji
-      noto-fonts-cjk-sans
-      noto-fonts-cjk-serif
-      hack-font
       exfat
       exfatprogs
       firefox
@@ -66,6 +61,23 @@
       })
     ];
   };
+  fonts.fonts = with pkgs; [
+    noto-fonts
+    noto-fonts-extra
+    noto-fonts-emoji
+    noto-fonts-cjk-sans
+    noto-fonts-cjk-serif
+    hack-font
+    source-code-pro
+    jetbrains-mono
+    font-awesome
+    fira-code
+    (nerdfonts.override {
+      fonts = [
+        "FiraCode"
+      ];
+    })
+  ];
   users = {
     defaultUserShell = pkgs.fish;
     users.${user} = {
