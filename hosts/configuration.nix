@@ -7,7 +7,6 @@
         version = "22.7.1.828-1";
         meta.knownVulnerabilities = [ ];
         src = super.fetchurl {
-          url = super.url;
           sha256 = "11510b5f46a170b5da831c14870ab1e183afe65635cc7835258519ec0164c7d7";
         };
       });
