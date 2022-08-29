@@ -7,12 +7,9 @@
         version = "22.7.1.828-1";
         pname = old.pname;
         meta.knownVulnerabilities = [ ];
-        _src = {
+        src = super.fetchurl {
           url = "http://repo.yandex.ru/yandex-browser/deb/pool/main/y/${pname}-beta/${pname}-beta_${version}_amd64.deb";
           sha256 = "11510b5f46a170b5da831c14870ab1e183afe65635cc7835258519ec0164c7d7";
-        };
-        src = super.fetchurl {
-          inherit _src;
         };
       });
     })
