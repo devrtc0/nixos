@@ -69,7 +69,7 @@
     defaultUserShell = pkgs.fish;
     users.${user} = {
       isNormalUser = true;
-      initialPassword = " ";
+      initialPassword = ".";
       extraGroups = [ "wheel" "video" "audio" "camera" "networkmanager" "disk" ];
     };
   };
