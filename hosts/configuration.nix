@@ -7,7 +7,7 @@
         version = "22.7.1.828-1";
         meta.knownVulnerabilities = [ ];
         src = super.fetchurl {
-          url = old.src.url;
+          url = "https://repo.yandex.ru/yandex-browser/deb/pool/main/y/yandex-browser-beta/yandex-browser-beta_22.7.1.828-1_amd64.deb";
           sha256 = "11510b5f46a170b5da831c14870ab1e183afe65635cc7835258519ec0164c7d7";
         };
       });
