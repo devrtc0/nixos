@@ -32,8 +32,10 @@
     };
   };
   environment = {
-    gnome.excludePackages = with pkgs; [
+    gnome.excludePackages = (with pkgs; [
       gnome-tour
-    ];
+    ]) ++ (with pkgs.gnome; [
+      epiphany # web browser
+    ]);
   };
 }
