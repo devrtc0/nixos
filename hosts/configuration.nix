@@ -6,7 +6,10 @@
       yandex-browser = super.yandex-browser.overrideAttrs (old: rec {
         version = "22.7.1.828-1";
         meta.knownVulnerabilities = [ ];
-        src.sha256 = "11510b5f46a170b5da831c14870ab1e183afe65635cc7835258519ec0164c7d7";
+        src = super.fetchurl {
+          url = "http://repo.yandex.ru/yandex-browser/deb/pool/main/y/${old.pname}-beta/${old.pname}-beta_${version}_amd64.deb";
+          sha256 = "11510b5f46a170b5da831c14870ab1e183afe65635cc7835258519ec0164c7d7";
+        };
       });
     })
   ];
