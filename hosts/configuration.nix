@@ -3,7 +3,7 @@
 {
   nixpkgs.overlays = [
     (self: super: {
-      yandex-browser = super.yandex-browser.overrideAttrs (old: {
+      yandex-browser-beta = super.yandex-browser.overrideAttrs (old: {
         version = "22.7.1.828-1";
         meta.knownVulnerabilities = [ ];
         src = super.fetchurl {
@@ -56,7 +56,7 @@
       exfatprogs
       firefox
       chromium
-      yandex-browser
+      yandex-browser-beta
       (vscode-with-extensions.override {
         vscode = vscodium;
         vscodeExtensions = with vscode-extensions; [
