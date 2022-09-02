@@ -38,6 +38,7 @@
       jq
       fd
       exa
+      ripgrep
       ldns
       rnix-lsp
       p7zip
