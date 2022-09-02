@@ -38,7 +38,6 @@
       jq
       fd
       exa
-      git-crypt
       ldns
       rnix-lsp
       p7zip
@@ -47,8 +46,6 @@
       unzip
       pbzip2
       pigz
-      exfat
-      exfatprogs
       firefox
       chromium
       yandex-browser
@@ -61,13 +58,7 @@
     ];
   };
   fonts.fonts = with pkgs; [
-    noto-fonts
-    # noto-fonts-extra
-    # noto-fonts-emoji
-    # noto-fonts-cjk-sans
-    # noto-fonts-cjk-serif
     hack-font
-    source-code-pro
   ];
   users = {
     defaultUserShell = pkgs.fish;
