@@ -1,6 +1,8 @@
 #!/usr/bin/env sh
 set -x
 
+umount -qR /mnt
+
 DEVICE="/dev/nvme0n1"
 
 sgdisk --zap-all $DEVICE || exit -1
