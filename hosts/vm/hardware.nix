@@ -5,7 +5,7 @@
 
   boot = {
     initrd = {
-      availableKernelModules = [ "ata_piix" "ohci_pci" "ehci_pci" "nvme" "sr_mod" ];
+      availableKernelModules = [ "ata_piix" "ohci_pci" "ehci_pci" "xhci_pci" "nvme" "sr_mod" ];
       kernelModules = [ ];
     };
     kernelModules = [ ];
@@ -34,7 +34,6 @@
       wait = "background";
       extraConfig = "noarp";
     };
-    networkmanager.plugins = [];
   };
 
   hardware.cpu.intel.updateMicrocode = lib.mkDefault config.hardware.enableRedistributableFirmware;

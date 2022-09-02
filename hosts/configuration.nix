@@ -25,6 +25,7 @@
   };
   environment = {
     systemPackages = with pkgs; [
+      pciutils
       micro
       mc
       htop
