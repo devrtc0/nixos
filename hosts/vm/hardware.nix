@@ -34,6 +34,7 @@
       wait = "background";
       extraConfig = "noarp";
     };
+    networkmanager.plugins = [];
   };
 
   hardware.cpu.intel.updateMicrocode = lib.mkDefault config.hardware.enableRedistributableFirmware;
