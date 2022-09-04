@@ -4,6 +4,7 @@ let
   pkgs = import nixpkgs {
     inherit system;
     config.allowUnfree = true;
+    config.hardware.enableAllFirmware = true;
   };
 in
 {
