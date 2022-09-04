@@ -1,4 +1,4 @@
-{ pkgs, user, ... }:
+{ pkgs, user, version, ... }:
 
 {
   boot = {
@@ -18,13 +18,11 @@
       });
     })
   ];
-  nixpkgs.config.allowUnfree = true;
-  nixpkgs.config.permittedInsecurePackages = [ ];
   time = {
     timeZone = "Europe/Samara";
   };
   system = {
-    stateVersion = "22.11";
+    stateVersion = version;
   };
   environment = {
     variables = {

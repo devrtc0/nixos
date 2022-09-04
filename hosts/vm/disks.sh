@@ -2,7 +2,7 @@
 
 RED='\033[0;31m'
 NC='\033[0m' # No Color
-check () {
+check() {
 	if [ $? -ne 0 ]; then
 		printf "${RED}ERROR${NC}"
 		exit -1
