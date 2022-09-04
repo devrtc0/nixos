@@ -12,7 +12,6 @@ check () {
 set -x
 
 umount -qR /mnt
-check
 
 DEVICE="/dev/nvme0n1"
 
