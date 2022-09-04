@@ -1,6 +1,5 @@
-{ nixpkgs, user, home-manager, version, ... }:
+{ nixpkgs, user, home-manager, version, system, ... }:
 let
-  system = "x86_64-linux";
   lib = nixpkgs.lib;
   pkgs = import nixpkgs {
     inherit system;

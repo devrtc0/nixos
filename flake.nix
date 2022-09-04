@@ -13,11 +13,12 @@
     let
       user = "azat";
       version = "22.11";
+      system = "x86_64-linux";
     in
     {
       nixosConfigurations =
         import ./hosts {
-          inherit nixpkgs user home-manager version;
+          inherit nixpkgs user home-manager version system;
         };
     };
 }
