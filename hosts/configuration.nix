@@ -1,10 +1,13 @@
 { pkgs, user, ... }:
 
 {
-  boot.kernelParams = [ "mitigations=off" ];
+  boot = {
+    tmpOnTmpfs = true;
+    kernelParams = [ "mitigations=off" ];
+  };
   nixpkgs.overlays = [
     (self: super: {
-      yandex-browser = super.yandex-browser.overrideAttrs (old: rec {
+      yandex-browser-beta = super.yandex-browser.overrideAttrs (old: rec {
         version = "22.7.1.828-1";
         pname = old.pname;
         meta.knownVulnerabilities = [ ];
@@ -21,9 +24,13 @@
     timeZone = "Europe/Samara";
   };
   system = {
-    stateVersion = "22.05";
+    stateVersion = "22.11";
   };
   environment = {
+    variables = {
+      EDITOR = "micro";
+      VISUAL = "codium";
+    };
     systemPackages = with pkgs; [
       pciutils
       micro
@@ -31,7 +38,6 @@
       htop
       oath-toolkit
       keepassxc
-      flameshot
       tdesktop
       lazygit
       yt-dlp
@@ -50,7 +56,7 @@
       pigz
       firefox
       chromium
-      yandex-browser
+      yandex-browser-beta
       (vscode-with-extensions.override {
         vscode = vscodium;
         vscodeExtensions = with vscode-extensions; [
@@ -100,6 +106,17 @@
     };
     ssh = {
       startAgent = true;
+    };
+  };
+  i18n = {
+    defaultLocale = "en_US.UTF-8";
+    supportedLocales = [
+      "en_US.UTF-8/UTF-8"
+      "en_GB.UTF-8/UTF-8"
+      "ru_RU.UTF-8/UTF-8"
+    ];
+    extraLocaleSettings = {
+      LC_TIME = "en_GB.UTF-8";
     };
   };
 }
