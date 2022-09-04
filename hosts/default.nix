@@ -3,8 +3,10 @@ let
   lib = nixpkgs.lib;
   pkgs = import nixpkgs {
     inherit system;
-    config.allowUnfree = true;
-    config.hardware.enableAllFirmware = true;
+    config = {
+      allowUnfree = true;
+      hardware.enableAllFirmware = true;
+    };
   };
 in
 {

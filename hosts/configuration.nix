@@ -53,7 +53,6 @@
       pbzip2
       pigz
       firefox
-      chromium
       yandex-browser-beta
       (vscode-with-extensions.override {
         vscode = vscodium;
@@ -104,6 +103,16 @@
     };
     ssh = {
       startAgent = true;
+    };
+    chromium = {
+      enable = true;
+      extensions = [
+        "cjpalhdlnbpafiamejdnhcphjbkeiagm" # ublock origin
+        "ogfcmafjalglgifnmanfmnieipoejdcf" # umatrix
+        "oboonakemofpalcgghocfoadofidjkkk" # keepassxc-browser
+        "ponfpcnoihfmfllpaingbgckeeldkhle" # enhancer-for-youtube
+        "npgcnondjocldhldegnakemclmfkngch" # обход-блокировок-рунета
+      ];
     };
   };
   i18n = {
