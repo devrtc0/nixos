@@ -57,7 +57,7 @@
     };
     systemPackages = with pkgs; [
       gnome-solanum
-      gedit
+      gnome.gedit
     ];
   };
 }
