@@ -43,11 +43,21 @@
   };
   environment = {
     gnome = {
-      excludePackages = with pkgs; [
+      excludePackages = (with pkgs; [
         gnome-tour
-      ];
+        gnome-photos
+      ]) ++ (with pkgs.gnome; [
+        epiphany
+        geary
+        cheese
+        gnome-music
+        gnome-calendar
+        gnome-weather
+      ]);
     };
     systemPackages = with pkgs; [
+      gnome-solanum
+      gedit
     ];
   };
 }
