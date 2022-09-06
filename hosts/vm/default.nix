@@ -55,9 +55,11 @@
         gnome-weather
       ]);
     };
-    systemPackages = with pkgs; [
+    systemPackages = (with pkgs; [
       gnome-solanum
-      gnome.gedit
-    ];
+    ]) ++ (with pkgs.gnome; [
+      gedit
+      gnome-tweaks
+    ]);
   };
 }
