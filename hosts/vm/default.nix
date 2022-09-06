@@ -4,6 +4,9 @@
   imports = [
     ./hardware.nix
   ];
+  nix.settings.substituters = [
+    "http://10.0.2.2:4444/"
+  ];
 
   boot = {
     loader = {
@@ -19,16 +22,13 @@
     xserver = {
       enable = true;
       displayManager = {
-        sddm = {
+        gdm = {
           enable = true;
         };
       };
       desktopManager = {
-        plasma5 = {
+        gnome = {
           enable = true;
-          excludePackages = with pkgs; [
-            plasma5Packages.elisa
-          ];
         };
       };
       autoRepeatDelay = 300;
@@ -42,9 +42,12 @@
     };
   };
   environment = {
+    gnome = {
+      excludePackages = with pkgs; [
+        gnome-tour
+      ];
+    };
     systemPackages = with pkgs; [
-      qbittorrent
-      kate
     ];
   };
 }
