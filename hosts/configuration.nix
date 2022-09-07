@@ -21,7 +21,6 @@
       pciutils
       micro
       mc
-      htop
       oath-toolkit
       keepassxc
       tdesktop
@@ -102,6 +101,9 @@
         "ponfpcnoihfmfllpaingbgckeeldkhle" # enhancer-for-youtube
         "npgcnondjocldhldegnakemclmfkngch" # обход-блокировок-рунета
       ];
+    };
+    htop = {
+      enable = true;
     };
   };
   i18n = {
