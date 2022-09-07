@@ -74,15 +74,6 @@
     fstrim = {
       enable = true;
     };
-    dnsmasq = {
-      enable = true;
-      servers = [
-        "77.88.8.8"
-        "77.88.8.1"
-        "1.1.1.1"
-        "8.8.8.8"
-      ];
-    };
   };
   programs = {
     git = {
@@ -124,6 +115,12 @@
     ];
     extraLocaleSettings = {
       LC_TIME = "en_GB.UTF-8";
+    };
+  };
+  networking = {
+    networkmanager = {
+      enable = true;
+      dns = "dnsmasq";
     };
   };
 }
