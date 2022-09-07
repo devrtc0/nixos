@@ -41,6 +41,7 @@
       pigz
       firefox
       chromium
+      yandex-browser-stable
       (vscode-with-extensions.override {
         vscode = vscodium;
         vscodeExtensions = with vscode-extensions; [
