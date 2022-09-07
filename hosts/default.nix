@@ -1,4 +1,4 @@
-{ nixpkgs, home-manager, version, system, ... }:
+{ nixpkgs, home-manager, version, system, overlays, ... }:
 let
   lib = nixpkgs.lib;
   pkgs = import nixpkgs {
@@ -9,6 +9,7 @@ let
         "linux-firmware"
       ];
     };
+    overlays = overlays;
   };
 in
 {

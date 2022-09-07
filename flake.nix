@@ -14,14 +14,14 @@
     let
       version = "22.11";
       system = "x86_64-linux";
-    in
-    {
-      nixpkgs.overlays = [
+      overlays = [
         (import "${my_overlays}")
       ];
+    in
+    {
       nixosConfigurations =
         import ./hosts {
-          inherit nixpkgs home-manager version system;
+          inherit nixpkgs home-manager version system overlays;
         };
     };
 }
