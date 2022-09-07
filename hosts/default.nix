@@ -1,4 +1,4 @@
-{ nixpkgs, home-manager, version, system, overlays, ... }:
+{ nixpkgs, home-manager, version, system, ... }:
 let
   lib = nixpkgs.lib;
   pkgs = import nixpkgs {
@@ -9,7 +9,12 @@ let
         "linux-firmware"
       ];
     };
-    overlays = overlays;
+    overlays = [
+      (import (builtins.fetchTarball {
+        url = https://github.com/devrtc0/nix-overlays/archive/master.tar.gz;
+        sha256 = "sha256:0h039di0m17afg2cc24s3p70s0bcvpbx97znadnyxbw2jzgbcfn9";
+      }))
+    ];
   };
 in
 {
