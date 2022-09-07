@@ -1,4 +1,4 @@
-{ nixpkgs, user, home-manager, version, system, ... }:
+{ nixpkgs, home-manager, version, system, ... }:
 let
   lib = nixpkgs.lib;
   pkgs = import nixpkgs {
@@ -32,7 +32,7 @@ in
 {
   vm = lib.nixosSystem {
     inherit system;
-    specialArgs = { inherit user version pkgs; };
+    specialArgs = { inherit version pkgs; };
     modules = [
       ./configuration.nix
       ./vm
@@ -42,8 +42,8 @@ in
         home-manager = {
           useGlobalPkgs = true;
           useUserPackages = true;
-          extraSpecialArgs = { inherit user version pkgs; };
-          users.${user} = {
+          extraSpecialArgs = { inherit version pkgs; };
+          users.user = {
             imports = [ (import ./home.nix) ] ++ [ (import ./vm/home.nix) ];
           };
         };
