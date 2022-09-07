@@ -118,9 +118,17 @@
     };
   };
   networking = {
+    nameservers = [ "127.0.0.1" ];
+    dhcpcd = {
+      wait = "background";
+      extraConfig = ''
+        nohook resolv.conf
+        noarp
+      '';
+    };
     networkmanager = {
       enable = true;
-      dns = "dnsmasq";
+      dns = "none";
     };
   };
 }

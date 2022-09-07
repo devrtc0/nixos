@@ -28,12 +28,7 @@
   swapDevices = [ ];
 
   networking = {
-    useDHCP = lib.mkDefault true;
     hostName = "vm";
-    dhcpcd = {
-      wait = "background";
-      extraConfig = "noarp";
-    };
   };
 
   hardware.cpu.intel.updateMicrocode = true;
