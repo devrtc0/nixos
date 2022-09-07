@@ -58,7 +58,6 @@
     systemPackages = (with pkgs; [
       gnome-solanum
     ]) ++ (with pkgs.gnome; [
-      gedit
       gnome-tweaks
     ]);
   };

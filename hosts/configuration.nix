@@ -12,6 +12,7 @@
     stateVersion = version;
   };
   environment = {
+    shells = [ pkgs.fish ];
     variables = {
       EDITOR = "micro";
       VISUAL = "codium";
@@ -53,11 +54,11 @@
     hack-font
   ];
   users = {
-    defaultUserShell = pkgs.fish;
     users = {
       user = {
         isNormalUser = true;
         description = "User";
+        shell = pkgs.fish;
         hashedPassword = "$6$r3DQjq.D2fz8rc5I$BtHOQnP/.lIcUJbcPyuRZH6ChQbfh.WEYgiX8ZqkF5RAuU/a5ebEZtuZ9tmbHdH9YOW/Gm6/fHFaQEvQRlk2R0";
         extraGroups = [ "wheel" "video" "audio" "camera" "networkmanager" "disk" ];
       };
