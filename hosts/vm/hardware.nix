@@ -10,6 +10,14 @@
     };
     kernelModules = [ ];
     extraModulePackages = [ ];
+    loader = {
+      systemd-boot = {
+        enable = true;
+      };
+      efi = {
+        canTouchEfiVariables = true;
+      };
+    };
   };
 
   fileSystems = {
@@ -27,17 +35,5 @@
 
   swapDevices = [ ];
 
-  networking = {
-    hostName = "vm";
-  };
-
   hardware.cpu.intel.updateMicrocode = true;
-  virtualisation = {
-    virtualbox.guest.enable = true;
-    podman = {
-      enable = true;
-      dockerCompat = true;
-      dockerSocket.enable = true;
-    };
-  };
 }

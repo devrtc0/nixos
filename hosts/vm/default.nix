@@ -8,16 +8,6 @@
     "http://10.0.2.2:4444/"
   ];
 
-  boot = {
-    loader = {
-      systemd-boot = {
-        enable = true;
-      };
-      efi = {
-        canTouchEfiVariables = true;
-      };
-    };
-  };
   services = {
     xserver = {
       enable = true;
@@ -42,8 +32,19 @@
     };
     dnsmasq = {
       servers = [
-        "1.1.1.1"
+        "8.8.4.4"
       ];
+    };
+  };
+  networking = {
+    hostName = "vm";
+  };
+  virtualisation = {
+    virtualbox.guest.enable = true;
+    podman = {
+      enable = true;
+      dockerCompat = true;
+      dockerSocket.enable = true;
     };
   };
   environment = {
