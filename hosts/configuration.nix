@@ -74,6 +74,12 @@
     fstrim = {
       enable = true;
     };
+    dnsmasq = {
+      enable = true;
+      servers = [
+        "1.1.1.1"
+      ];
+    };
   };
   programs = {
     git = {

@@ -40,6 +40,11 @@
         xterm
       ];
     };
+    dnsmasq = {
+      servers = [
+        "1.1.1.1"
+      ];
+    };
   };
   environment = {
     gnome = {
