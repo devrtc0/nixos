@@ -10,9 +10,9 @@ let
       ];
     };
     overlays = [
-      (import (builtins.fetchTarball {
-        url = https://github.com/devrtc0/nix-overlays/archive/master.tar.gz;
-        sha256 = "sha256:0h039di0m17afg2cc24s3p70s0bcvpbx97znadnyxbw2jzgbcfn9";
+      (import (builtins.fetchGit {
+        rev = "96bcc46fef69df094a0c9b5d2ca9c32bf35032c9";
+        url = "https://github.com/devrtc0/nix-overlays.git";
       }))
     ];
   };
