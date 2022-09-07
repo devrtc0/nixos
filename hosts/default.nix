@@ -1,7 +1,6 @@
-{ nixpkgs, home-manager, version, system, my_overlays, ... }:
+{ nixpkgs, home-manager, version, system, ... }:
 let
   lib = nixpkgs.lib;
-  # my_overlays = import (builtins.fetchGit https://github.com/devrtc0/nix-overlays.git);
   pkgs = import nixpkgs {
     inherit system;
     config = {
@@ -10,10 +9,6 @@ let
         "linux-firmware"
       ];
     };
-    overlays = [
-      # my_overlays
-      (import "${my_overlays}")
-    ];
   };
 in
 {

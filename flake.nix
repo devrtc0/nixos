@@ -16,9 +16,12 @@
       system = "x86_64-linux";
     in
     {
+      nixpkgs.overlays = [
+        (import "${my_overlays}")
+      ];
       nixosConfigurations =
         import ./hosts {
-          inherit nixpkgs home-manager version system my_overlays;
+          inherit nixpkgs home-manager version system;
         };
     };
 }
