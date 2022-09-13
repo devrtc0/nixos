@@ -17,33 +17,8 @@
       EDITOR = "micro";
       VISUAL = "codium";
     };
-    systemPackages = with pkgs; [
-      pciutils
-      micro
-      mc
-      oath-toolkit
-      keepassxc
-      tdesktop
-      lazygit
-      yt-dlp
-      mkvtoolnix
-      jq
-      fd
-      exa
-      ripgrep
-      ldns
-      rnix-lsp
-      p7zip
-      unrar
-      zip
-      unzip
-      pbzip2
-      pigz
-      firefox
-      chromium
-      yandex-browser-stable
-      rust-analyzer
-      (vscode-with-extensions.override {
+    systemPackages = with pkgs;
+      let vscodiumWithExtensions = vscode-with-extensions.override {
         vscode = vscodium;
         vscodeExtensions = with vscode-extensions; [
           jnoortheen.nix-ide
@@ -51,8 +26,36 @@
           tamasfe.even-better-toml
           matklad.rust-analyzer
         ];
-      })
-    ];
+      };
+      in
+      [
+        pciutils
+        micro
+        mc
+        oath-toolkit
+        keepassxc
+        tdesktop
+        lazygit
+        yt-dlp
+        mkvtoolnix
+        jq
+        fd
+        exa
+        ripgrep
+        ldns
+        rnix-lsp
+        p7zip
+        unrar
+        zip
+        unzip
+        pbzip2
+        pigz
+        firefox
+        chromium
+        yandex-browser-stable
+        rust-analyzer
+        vscodiumWithExtensions
+      ];
   };
   fonts.fonts = with pkgs; [
     hack-font
