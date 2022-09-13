@@ -42,10 +42,14 @@
       firefox
       chromium
       yandex-browser-stable
+      rust-analyzer
       (vscode-with-extensions.override {
         vscode = vscodium;
         vscodeExtensions = with vscode-extensions; [
           jnoortheen.nix-ide
+          serayuzgur.crates
+          tamasfe.even-better-toml
+          matklad.rust-analyzer
         ];
       })
     ];
@@ -78,7 +82,10 @@
     dnsmasq = {
       enable = true;
       servers = [
+        "77.88.8.8"
+        "77.88.8.1"
         "1.1.1.1"
+        "8.8.8.8"
       ];
     };
   };
