@@ -11,7 +11,7 @@ let
     };
     overlays = [
       (import (builtins.fetchGit {
-        rev = "d558df8cc4155cfff62692fd01ab294620efff18";
+        rev = "7c1610f51987810ff5673a163881bcb8858c2d5e";
         url = "https://github.com/devrtc0/nix-overlays.git";
       }))
     ];
