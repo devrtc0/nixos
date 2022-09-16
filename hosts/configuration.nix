@@ -52,7 +52,7 @@
         pigz
         firefox
         chromium
-        yandex-browser-stable
+        yandex-browser
         rust-analyzer
         codiumWithExtensions
       ];
