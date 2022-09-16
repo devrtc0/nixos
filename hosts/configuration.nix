@@ -18,7 +18,7 @@
       VISUAL = "codium";
     };
     systemPackages = with pkgs;
-      let vscodiumWithExtensions = vscode-with-extensions.override {
+      let codiumWithExtensions = vscode-with-extensions.override {
         vscode = vscodium;
         vscodeExtensions = with vscode-extensions; [
           jnoortheen.nix-ide
@@ -54,7 +54,7 @@
         chromium
         yandex-browser-stable
         rust-analyzer
-        vscodiumWithExtensions
+        codiumWithExtensions
       ];
   };
   fonts.fonts = with pkgs; [

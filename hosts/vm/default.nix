@@ -62,7 +62,7 @@
       ]);
     };
     systemPackages = (with pkgs; [
-      gnome-solanum
+      gnome-solanum # pomodoro timer
     ]) ++ (with pkgs.gnome; [
       gnome-tweaks
     ]);
