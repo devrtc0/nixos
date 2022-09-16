@@ -25,6 +25,13 @@
           serayuzgur.crates
           tamasfe.even-better-toml
           matklad.rust-analyzer
+        ] ++ vscode-utils.extensionsFromVscodeMarketplace [
+          {
+            name = "vscodeintellicode";
+            publisher = "VisualStudioExptTeam";
+            version = "1.2.25";
+            sha256 = "32939942c7a74860603e95539511af5c5819a9f006c2e0f3b32b3cb66eddfc51";
+          }
         ];
       };
       in
@@ -52,7 +59,6 @@
         pigz
         firefox
         chromium
-        yandex-browser
         rust-analyzer
         codiumWithExtensions
       ];

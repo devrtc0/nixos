@@ -66,5 +66,8 @@
     ]) ++ (with pkgs.gnome; [
       gnome-tweaks
     ]);
+    sessionVariables = {
+      NIXOS_OZONE_WL = "1";
+    };
   };
 }
