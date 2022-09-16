@@ -59,7 +59,6 @@
   };
   fonts.fonts = with pkgs; [
     hack-font
-    noto-fonts-emoji
   ];
   users = {
     users = {
