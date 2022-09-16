@@ -69,6 +69,7 @@
     };
     systemPackages = (with pkgs; [
       gnome-solanum # pomodoro timer
+      sof-firmware
     ]) ++ (with pkgs.gnome; [
       gnome-tweaks
     ]);
