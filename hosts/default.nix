@@ -38,4 +38,25 @@ in
       }
     ];
   };
+
+  t15g1 = lib.nixosSystem {
+    inherit system;
+    specialArgs = { inherit version pkgs; };
+    modules = [
+      ./configuration.nix
+      ./t15g1
+
+      home-manager.nixosModules.home-manager
+      {
+        home-manager = {
+          useGlobalPkgs = true;
+          useUserPackages = true;
+          extraSpecialArgs = { inherit version pkgs; };
+          users.user = {
+            imports = [ (import ./home.nix) ] ++ [ (import ./t15g1/home.nix) ];
+          };
+        };
+      }
+    ];
+  };
 }
