@@ -19,6 +19,9 @@
       desktopManager = {
         plasma5 = {
           enable = true;
+          excludePackages = with pkgs; [
+            plasma5Packages.elisa
+          ];
         };
         xterm = {
           enable = false;
