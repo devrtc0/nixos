@@ -18,12 +18,12 @@ let
   };
 in
 {
-  vm = lib.nixosSystem {
+  vm1 = lib.nixosSystem {
     inherit system;
     specialArgs = { inherit version pkgs; };
     modules = [
       ./configuration.nix
-      ./vm
+      ./vm1
 
       home-manager.nixosModules.home-manager
       {
@@ -32,7 +32,28 @@ in
           useUserPackages = true;
           extraSpecialArgs = { inherit version pkgs; };
           users.user = {
-            imports = [ (import ./home.nix) ] ++ [ (import ./vm/home.nix) ];
+            imports = [ (import ./home.nix) ] ++ [ (import ./vm1/home.nix) ];
+          };
+        };
+      }
+    ];
+  };
+
+  vm2 = lib.nixosSystem {
+    inherit system;
+    specialArgs = { inherit version pkgs; };
+    modules = [
+      ./configuration.nix
+      ./vm2
+
+      home-manager.nixosModules.home-manager
+      {
+        home-manager = {
+          useGlobalPkgs = true;
+          useUserPackages = true;
+          extraSpecialArgs = { inherit version pkgs; };
+          users.user = {
+            imports = [ (import ./home.nix) ] ++ [ (import ./vm2/home.nix) ];
           };
         };
       }
