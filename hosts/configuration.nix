@@ -27,10 +27,11 @@
           matklad.rust-analyzer
         ] ++ vscode-utils.extensionsFromVscodeMarketplace [
           {
+            # https://marketplace.visualstudio.com/items?itemName=VisualStudioExptTeam.vscodeintellicode
             name = "vscodeintellicode";
             publisher = "VisualStudioExptTeam";
-            version = "1.2.25";
-            sha256 = "32939942c7a74860603e95539511af5c5819a9f006c2e0f3b32b3cb66eddfc51";
+            version = "1.2.29";
+            sha256 = "5a5fbe77b9823a380beef99554028f410816452165a8be2bcbbbf4c286f53b25";
           }
         ];
       };
