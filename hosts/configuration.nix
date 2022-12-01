@@ -41,6 +41,7 @@
     fstrim = {
       enable = true;
     };
+    openssh.enable = true;
   };
   programs = {
     git = {
