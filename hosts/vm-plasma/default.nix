@@ -8,6 +8,10 @@
     "http://192.168.3.188:4444/"
   ];
 
+  virtualisation.virtualbox.guest = {
+    enable = true;
+    x11 = true;
+  };
   services = {
     xserver = {
       enable = true;

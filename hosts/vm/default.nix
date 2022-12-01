@@ -13,18 +13,11 @@
   };
   environment = {
     systemPackages = with pkgs; [
-        jq
-        fd
-        exa
-        ripgrep
-        rnix-lsp
-        p7zip
-        unrar
-        zip
-        unzip
-        pbzip2
-        pigz
-        rust-analyzer
       ];
+  };
+  virtualisation.virtualbox.guest.enable = true;
+  virtualisation.virtualbox.host = {
+    headless = true;
+    enableExtensionPack = true;
   };
 }
