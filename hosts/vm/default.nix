@@ -15,7 +15,6 @@
     systemPackages = with pkgs; [
       ];
   };
-  virtualisation.virtualbox.guest.enable = true;
   virtualisation.virtualbox.host = {
     headless = true;
     enableExtensionPack = true;
