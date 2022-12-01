@@ -15,8 +15,11 @@
     systemPackages = with pkgs; [
       ];
   };
+  virtualisation.virtualbox.guest.enable = true;
   virtualisation.virtualbox.host = {
+    enable = true;
     headless = true;
     enableExtensionPack = true;
   };
+  users.users.azat.extraGroups = [ "vboxusers" ];
 }
