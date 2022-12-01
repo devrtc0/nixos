@@ -10,6 +10,7 @@
 
   networking = {
     hostName = "vm";
+    firewall.checkReversePath = "loose";
   };
   environment = {
     systemPackages = with pkgs; [
