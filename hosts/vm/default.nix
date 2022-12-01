@@ -13,12 +13,21 @@
   };
   environment = {
     systemPackages = with pkgs; [
-      ];
+    ];
   };
-  virtualisation.virtualbox.guest.enable = true;
-  virtualisation.virtualbox.host = {
-    enable = true;
-    headless = true;
+  virtualisation.virtualbox = {
+    guest = {
+      enable = true;
+    };
+    host = {
+      enable = true;
+      headless = true;
+    };
   };
-  users.users.azat.extraGroups = [ "vboxusers" ];
+  services = {
+    tailscale = {
+      enable = true;
+    };
+  };
+  users.users.azat.extraGroups = [ "vboxusers" "vboxsf" ];
 }
