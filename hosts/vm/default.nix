@@ -16,6 +16,7 @@
       ];
   };
   virtualisation.virtualbox.host = {
+    enable = true;
     headless = true;
   };
   users.users.azat.extraGroups = [ "vboxusers" ];
