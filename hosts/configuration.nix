@@ -30,7 +30,7 @@
         description = "Azat";
         shell = pkgs.fish;
         hashedPassword = "$6$r3DQjq.D2fz8rc5I$BtHOQnP/.lIcUJbcPyuRZH6ChQbfh.WEYgiX8ZqkF5RAuU/a5ebEZtuZ9tmbHdH9YOW/Gm6/fHFaQEvQRlk2R0";
-        extraGroups = [ "wheel" "video" "audio" "camera" "networkmanager" "disk" ];
+        extraGroups = [ "wheel" "video" "audio" "camera" "disk" ];
         openssh.authorizedKeys.keys = [
           "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIKPBlmW9r5Y8Zj8cTxECLO9HEY+USByhVDxdPxq++oy2 id_ed25519"
         ];

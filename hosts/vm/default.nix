@@ -26,5 +26,5 @@
       enable = true;
     };
   };
-  users.users.azat.extraGroups = [ "vboxusers" "vboxsf" ];
+  users.users.azat.extraGroups = [ "vboxsf" ];
 }

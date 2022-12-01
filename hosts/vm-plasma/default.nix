@@ -12,6 +12,7 @@
     enable = true;
     x11 = true;
   };
+  users.users.azat.extraGroups = [ "networkmanager" "vboxsf" ];
   services = {
     xserver = {
       enable = true;
