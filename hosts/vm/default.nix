@@ -10,7 +10,7 @@
 
   networking = {
     hostName = "vm";
-    firewall.checkReversePath = "loose";
+    firewall.enable = false;
   };
   environment = {
     systemPackages = with pkgs; [
@@ -19,10 +19,6 @@
   virtualisation.virtualbox = {
     guest = {
       enable = true;
-    };
-    host = {
-      enable = true;
-      headless = true;
     };
   };
   services = {
