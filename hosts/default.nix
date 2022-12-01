@@ -38,5 +38,25 @@ in
       }
     ];
   };
+  vm-plasma = lib.nixosSystem {
+    inherit system;
+    specialArgs = { inherit version pkgs; };
+    modules = [
+      ./configuration.nix
+      ./vm-plasma
+
+      home-manager.nixosModules.home-manager
+      {
+        home-manager = {
+          useGlobalPkgs = true;
+          useUserPackages = true;
+          extraSpecialArgs = { inherit version pkgs; };
+          users.azat = {
+            imports = [ (import ./home.nix) ] ++ [ (import ./vm-plasma/home.nix) ];
+          };
+        };
+      }
+    ];
+  };
 
 }
