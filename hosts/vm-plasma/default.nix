@@ -24,9 +24,6 @@
       desktopManager = {
         plasma5 = {
           enable = true;
-          excludePackages = with pkgs; [
-            plasma5Packages.elisa
-          ];
         };
         xterm = {
           enable = false;
@@ -40,12 +37,14 @@
     };
     dnsmasq = {
       enable = true;
-      servers = [
-        "77.88.8.8"
-        "77.88.8.1"
-        "1.1.1.1"
-        "8.8.8.8"
-      ];
+      settings = {
+        servers = [
+          "77.88.8.8"
+          "77.88.8.1"
+          "1.1.1.1"
+          "8.8.8.8"
+        ];
+      };
     };
   };
   programs = {
@@ -102,7 +101,7 @@
         oath-toolkit
         keepassxc
         tdesktop
-        lazygit
+        gitui
         yt-dlp
         mkvtoolnix
         jq
@@ -122,6 +121,11 @@
         codiumWithExtensions
         kde-gtk-config
       ];
+    plasma5 = {
+      excludePackages = with pkgs; [
+        plasma5Packages.elisa
+      ];
+    };
   };
   systemd = {
     services = {

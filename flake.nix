@@ -11,7 +11,7 @@
 
   outputs = { self, nixpkgs, home-manager, ... }:
     let
-      version = "23.05";
+      version = "23.11";
       system = "x86_64-linux";
     in
     {

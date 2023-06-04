@@ -2,7 +2,9 @@
 
 {
   boot = {
-    tmpOnTmpfs = true;
+    tmp = {
+      useTmpfs = true;
+    };
     kernelParams = [ "mitigations=off" ];
   };
   time = {
@@ -63,6 +65,9 @@
       startAgent = true;
     };
     htop = {
+      enable = true;
+    };
+    fish = {
       enable = true;
     };
   };
